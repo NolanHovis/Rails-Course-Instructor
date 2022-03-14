@@ -1,0 +1,18 @@
+<h1>Create a new Book</h1>
+
+<%= form_with(model: @book, url: books_path) do |form| %> 
+  <%= form.label :title, "Title:" %>
+  <%= form.text_field :title %>
+  <%= form.label :description, "Description:" %>
+  <%= form.text_area :description %>
+  <%= form.submit "Save Book" %>
+<%end%>
+
+<% if @book.errors.any? %>
+  <% @book.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
+
+<%=  %> 
+
